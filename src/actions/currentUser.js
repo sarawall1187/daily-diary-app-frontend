@@ -10,12 +10,12 @@ export const setCurrentUser = (user) => {
 // async action creators
 export const login = (credentials) => {
     return dispatch => {
-        return fetch('http://localhost:3001/api/v1/login', {
+        return fetch('http://localhost:3000/api/v1/login', {
             method: "POST",
             headers: {
                 "Content-Type": 'application/json'
             },
-            body: JSON.stringify({username: "sarawall1187", password: 'password'})
+            body: JSON.stringify(credentials)
     })
   }
 }
