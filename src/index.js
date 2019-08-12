@@ -3,18 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { createStore, compose, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
-import thunk from 'redux-thunk'
+import store from './store.js'
 
-import usersRdeucer from './reducers/users'
-
-const reducer = combineReducers({
-    users: usersReducer
-})
-
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)) )
 
 ReactDOM.render(
 <Provider store={store}>
