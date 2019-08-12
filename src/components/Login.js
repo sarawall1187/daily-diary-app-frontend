@@ -1,5 +1,13 @@
 import React from 'react'
 
-export default class Login extends React.Component {
-    
+ const Login = () => {
+    return (
+        <form>
+            <input type="text" name="username"/>
+            <input type="password"name="password"/>
+            <input type="submit"/>
+        </form>
+    )
 }
+
+export default Login
