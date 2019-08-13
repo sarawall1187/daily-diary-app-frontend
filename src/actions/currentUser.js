@@ -9,6 +9,7 @@ export const setCurrentUser = (user) => {
 
 // async action creators
 export const login = (credentials) => {
+    // debugger
     return dispatch => {
         return fetch('http://localhost:3000/api/v1/login', {
             credentials: "include",
@@ -18,7 +19,7 @@ export const login = (credentials) => {
             },
             body: JSON.stringify(credentials)
     }).then(res => res.json())
-    .then(user => {
+      .then(user => {
         if(user.error) {
             alert(user.error)
         } else {
