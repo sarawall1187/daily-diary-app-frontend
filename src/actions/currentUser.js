@@ -41,7 +41,6 @@ export const logout = () => {
         return fetch('http://localhost:3000/api/v1/logout', {
             credentials: "include",
             method: "DELETE"    
-      
         })
     }
 }

@@ -9,7 +9,6 @@ import Logout from './Logout.js'
        <div>
            {currentUser ? <strong>Welcome {currentUser.username}</strong> : "Welcome to your Daily Diary"}
            {currentUser ? <Logout/> : <Login/>}
-           <Logout/>
        </div>
     )
 }
