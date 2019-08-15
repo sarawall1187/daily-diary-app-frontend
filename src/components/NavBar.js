@@ -7,7 +7,7 @@ import Logout from './Logout.js'
 
     return (
        <div>
-           {currentUser ? <strong>Welcome {currentUser.username}</strong> : "Welcome to your Daily Diary"}
+           {currentUser ? <strong>Welcome {currentUser.attributes.username}</strong> : "Welcome to your Daily Diary"}
            {currentUser ? <Logout/> : <Login/>}
        </div>
     )
