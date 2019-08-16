@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import {connect} from 'react-redux'
 import {getCurrentUser} from './actions/currentUser.js'
-import {BrowserRouter as Router, Route, withRouter, Switch} from 'react-router-dom'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 import NavBar from './components/NavBar.js'
 import Home from './components/Home.js'
 import Login from './components/Login.js'
@@ -25,7 +25,7 @@ class App extends React.Component {
        <Router>
           <Route exact path='/' render={(props) => loggedIn ? <DiaryContainer {...props}/> : <Home {...props}/>}/>
           <Route exact path='/login' component={Login}/> 
-          <Route exact path='/signup' component={Signup}/> 
+          <Route exact path='/signup' render={(props) => <Signup history={props.history}/>}/> 
           <Route exact path='/myentries' component={MyEntries}/> 
           <Route/>
        </Router>
