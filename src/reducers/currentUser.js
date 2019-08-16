@@ -5,7 +5,7 @@ export default (state = null, action) => {
             return action.payload
 
         case "CLEAR_CURRENT_USER":
-        return null
+            return null
 
         default:
             return state;
