@@ -8,10 +8,9 @@ const DiaryContainer = ({currentUser}) => {
    
         return (
             <div>
-              {currentUser ? <strong>Welcome {currentUser.attributes.username}</strong> : ""}
-              {currentUser ?  <MyEntries/> : ""}
-              {currentUser ?  <Logout/> : ""}
-              
+              <h3>Welcome {currentUser.attributes.username}</h3>
+              <MyEntries/>
+              <Logout/> 
             </div>
            
        )

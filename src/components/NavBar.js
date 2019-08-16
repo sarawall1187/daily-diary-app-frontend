@@ -1,7 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import Login from './Login.js'
-import Signup from './Signup.js'
+
 
  const NavBar = ({currentUser}) => {
 
@@ -12,8 +11,8 @@ import Signup from './Signup.js'
            {/* <Login/>
            
            <Signup/> */}
-           <h1>Welcome to your Daily Diary</h1>
-           <button>Login</button><p>or</p><button>Signup</button>
+          
+           {/* <button>Login</button><p>or</p><button>Signup</button> */}
           
        </div>
     )
