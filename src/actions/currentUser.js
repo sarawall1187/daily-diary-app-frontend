@@ -71,28 +71,27 @@ export const getCurrentUser = () => {
 }
 
 export const signup = (credentials) => {
-    debugger
     return dispatch => {
+       const userInfo = {
+           user: credentials
+       }
         return fetch('http://localhost:3000/api/v1/signup', {
             credentials: "include",
             method: "POST",
             headers: {
                 "Content-Type": 'application/json'
             },
-            body: JSON.stringify(credentials)
-            
-    }).then(res => res.json())
-   
-      .then(user => {
-        debugger
-        if(user.error) {
-            alert(user.error)
-        } else {
-            dispatch(setCurrentUser(user.data))
-            debugger
-            dispatch(resetSignupForm())
-        }
-    }).catch(console.log)
-  }
+            body: JSON.stringify(userInfo),     
+            }).then(res => res.json())
+             .then(user => {
+               if(user.error) {
+                 alert(user.error)
+               } else {
+                dispatch(setCurrentUser(user.data))
+               
+                dispatch(resetSignupForm())
+            }
+         }).catch(console.log)
+    }
 }
 
