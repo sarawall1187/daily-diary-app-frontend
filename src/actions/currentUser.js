@@ -1,4 +1,5 @@
 import { resetLoginForm } from './loginForm.js'
+import { resetSignupForm } from './signupForm.js'
 import { getMyEntries } from './myEntries.js'
 
 //synchronous action creators
@@ -67,3 +68,26 @@ export const getCurrentUser = () => {
     }).catch(console.log)
   }
 }
+
+export const signup = (credentials) => {
+    // debugger
+    return dispatch => {
+        return fetch('http://localhost:3000/api/v1/signup', {
+            credentials: "include",
+            method: "POST",
+            headers: {
+                "Content-Type": 'application/json'
+            },
+            body: JSON.stringify(credentials)
+    }).then(res => res.json())
+      .then(user => {
+        if(user.error) {
+            alert(user.error)
+        } else {
+            dispatch(setCurrentUser(user.data))
+            dispatch(resetSignupForm())
+        }
+    }).catch(console.log)
+  }
+}
+

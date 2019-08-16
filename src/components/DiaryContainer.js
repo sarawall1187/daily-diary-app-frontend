@@ -1,16 +1,27 @@
 import React from 'react'
+import {connect} from 'react-redux'
 import MyEntries from './MyEntries.js'
+import Logout from './Logout.js'
 
-class DiaryContainer extends React.Component {
+const DiaryContainer = ({currentUser}) => {
 
-    render(){
+   
         return (
             <div>
+              {currentUser ? <strong>Welcome {currentUser.attributes.username}</strong> : "Welcome to your Daily Diary"}
               <MyEntries/>
+              <Logout/>
             </div>
            
        )
-    }
+  
 }
+const mapStateToProps = ({currentUser}) => {
+    return ({
+      currentUser
+    })
+  }
+  
 
-export default DiaryContainer
+
+export default connect(mapStateToProps)(DiaryContainer);

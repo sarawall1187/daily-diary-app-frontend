@@ -5,7 +5,6 @@ import {getCurrentUser} from './actions/currentUser.js'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 import NavBar from './components/NavBar.js'
 import Login from './components/Login.js'
-import Logout from './components/Logout.js'
 import MyEntries from './components/MyEntries.js'
 
 import DiaryContainer from './components/DiaryContainer.js'
