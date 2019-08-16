@@ -1,5 +1,5 @@
 import { resetLoginForm } from './loginForm.js'
-import { getMyTrips } from './myEntries.js'
+import { getMyEntries } from './myEntries.js'
 
 //synchronous action creators
 export const setCurrentUser = (user) => {
@@ -32,7 +32,6 @@ export const login = (credentials) => {
             alert(user.error)
         } else {
             dispatch(setCurrentUser(user.data))
-            dispatch(getMyEntries())
             dispatch(resetLoginForm())
         }
     }).catch(console.log)
@@ -63,6 +62,7 @@ export const getCurrentUser = () => {
             alert(user.error)
         } else {
             dispatch(setCurrentUser(user.data))
+            dispatch(getMyEntries())
         }
     }).catch(console.log)
   }

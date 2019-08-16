@@ -1,9 +1,15 @@
 import React from 'react'
+import MyEntries from './MyEntries.js'
 
 class UserContainer extends React.Component {
 
     render(){
-        return "I am the userContainer"
+        return (
+            <div>
+            <MyEntries/>
+            </div>
+           
+       )
     }
 }
 

@@ -17,11 +17,11 @@ export const getMyEntries = () => {
                 "Content-Type": 'application/json'
             }
     }).then(res => res.json())
-    .then(user => {
-        if(user.error) {
-            alert(user.error)
+    .then(entry => {
+        if(entry.error) {
+            alert(entry.error)
         } else {
-            dispatch(setMyEntries([]))
+            dispatch(setMyEntries(entry.data))
         }
     }).catch(console.log)
   }
