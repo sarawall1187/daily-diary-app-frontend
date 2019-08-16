@@ -8,6 +8,7 @@ import Home from './components/Home.js'
 import Login from './components/Login.js'
 import Signup from './components/Signup.js'
 import MyEntries from './components/MyEntries.js'
+import NewEntryForm from './components/NewEntryForm.js'
 
 import DiaryContainer from './components/DiaryContainer.js'
 
@@ -26,7 +27,8 @@ class App extends React.Component {
           <Route exact path='/' render={(props) => loggedIn ? <DiaryContainer {...props}/> : <Home {...props}/>}/>
           <Route exact path='/login' component={Login}/> 
           <Route exact path='/signup' render={(props) => <Signup history={props.history}/>}/> 
-          <Route exact path='/myentries' component={MyEntries}/> 
+          <Route exact path='/entries' component={MyEntries}/> 
+          <Route exact path='/entries/new' component={NewEntryForm}/> 
           <Route/>
        </Router>
        
