@@ -6,9 +6,7 @@ import EntryCard from './EntryCard.js'
 const MyEntries = (props) => {
     const EntryCards = props.myEntries.map(entry => <EntryCard entry={entry} key={entry.id}/>)
 
-    return (
-        EntryCards
-    )
+    return EntryCards
 
 }
 

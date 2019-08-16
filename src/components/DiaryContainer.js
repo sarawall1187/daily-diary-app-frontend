@@ -1,16 +1,16 @@
 import React from 'react'
 import MyEntries from './MyEntries.js'
 
-class UserContainer extends React.Component {
+class DiaryContainer extends React.Component {
 
     render(){
         return (
             <div>
-            <MyEntries/>
+              <MyEntries/>
             </div>
            
        )
     }
 }
 
-export default UserContainer
+export default DiaryContainer
