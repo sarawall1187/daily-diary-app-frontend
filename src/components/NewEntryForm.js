@@ -1,8 +1,11 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {updateNewEntryForm} from '../actions/newEntryForm.js'
+import {createEntry} from '../actions/myEntries.js'
 
-const NewEntryForm = ({todaysEntry, tomorrowsGoal, foodLog, history}) => {
+const NewEntryForm = ({formData, history, updateNewEntryForm, createEntry, userId}) => {
+ 
+    const {todaysEntry, tomorrowsGoal, foodLog, createdAt} = formData
 
     const handleChange = (event) => {
         const {name, value} = event.target
@@ -12,6 +15,7 @@ const NewEntryForm = ({todaysEntry, tomorrowsGoal, foodLog, history}) => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
+        createEntry({formData, userId})
     }
  return ( 
         <form onSubmit={handleSubmit}>
@@ -23,12 +27,11 @@ const NewEntryForm = ({todaysEntry, tomorrowsGoal, foodLog, history}) => {
      )};
 
 const mapStateToProps = (state) => {
-    const {todaysEntry, tomorrowsGoal, foodLog} = state.newEntryForm
+    const userId = state.currentUser ? state.currentUser.id : ""
     return {
-        todaysEntry,
-        tomorrowsGoal,
-        foodLog
+       formData: state.newEntryForm,
+        userId
     }
 }
 
-export default connect(mapStateToProps, {updateNewEntryForm})(NewEntryForm)
+export default connect(mapStateToProps, {updateNewEntryForm, createEntry})(NewEntryForm)
