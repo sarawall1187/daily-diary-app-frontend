@@ -31,3 +31,12 @@
     transform: rotate(360deg);
   }
 }
+
+.NavBar {
+  display: flex;
+  flex-direction: row;
+}
+
+a.active {
+  color: teal
+}

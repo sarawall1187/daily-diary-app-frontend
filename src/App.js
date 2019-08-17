@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import {connect} from 'react-redux'
 import {getCurrentUser} from './actions/currentUser.js'
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch, withRouter} from 'react-router-dom'
 import NavBar from './components/NavBar.js'
 import Home from './components/Home.js'
 import Login from './components/Login.js'
@@ -23,7 +23,9 @@ class App extends React.Component {
     const {loggedIn} = this.props
     return (
       <div>   
+     
        <Router>
+       {loggedIn ? <NavBar/> : null}
           <Route exact path='/' render={(props) => loggedIn ? <DiaryContainer {...props}/> : <Home {...props}/>}/>
           <Route exact path='/login' component={Login}/> 
           <Route exact path='/signup' render={(props) => <Signup history={props.history}/>}/> 

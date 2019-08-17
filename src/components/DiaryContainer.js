@@ -10,7 +10,6 @@ const DiaryContainer = ({currentUser}) => {
             <div>
               <h3>Welcome {currentUser.attributes.username}</h3>
               <MyEntries/>
-              <Logout/> 
             </div>
            
        )

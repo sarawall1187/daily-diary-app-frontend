@@ -1,19 +1,16 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {NavLink} from 'react-router-dom'
+import Logout from './Logout.js'
 
 
  const NavBar = ({currentUser}) => {
 
     return (
-       <div>
-           {/* {currentUser ? <strong>Welcome {currentUser.attributes.username}</strong> : "Welcome to your Daily Diary"} */}
-           {/* {currentUser ? <Logout/> : <Login/>} */}
-           {/* <Login/>
-           
-           <Signup/> */}
-          
-           {/* <button>Login</button><p>or</p><button>Signup</button> */}
-          
+       <div className="NavBar">
+          <NavLink exact activeClass to="/entries">My Diary Entries |  </NavLink>
+          <NavLink exact activeCLass to="/entries/new">Create a New Diary Entry   </NavLink>
+          {!!currentUser ? <Logout/> : null}
        </div>
     )
 }

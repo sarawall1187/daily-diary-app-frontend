@@ -1,6 +1,7 @@
 import { resetLoginForm } from './loginForm.js'
 import { resetSignupForm } from './signupForm.js'
 import { getMyEntries } from './myEntries.js'
+import { clearEntries } from './myEntries.js'
 
 //synchronous action creators
 export const setCurrentUser = (user) => {
@@ -44,6 +45,7 @@ export const login = (credentials, history) => {
 export const logout = () => {
     return dispatch => {
         dispatch(clearCurrentUser())
+        dispatch(clearEntries())
         return fetch('http://localhost:3000/api/v1/logout', {
             credentials: "include",
             method: "DELETE"    

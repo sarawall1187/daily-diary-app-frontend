@@ -7,6 +7,13 @@ export const setMyEntries = (entries) => {
     }
 }
 
+export const clearEntries = () => {
+    return {
+        type: "CLEAR_ENTRIES"
+    }
+
+}
+
 //asynchronous action creators
 export const getMyEntries = () => {
     return dispatch => {
