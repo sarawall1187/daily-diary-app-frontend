@@ -14,11 +14,11 @@ export const clearEntries = () => {
 
 }
 
-export const addEntry = (trip) => {
-    console.log("inside my addEntry Action Create", trip)
+export const addEntry = (entry) => {
+    
     return {
         type: "ADD_ENTRY",
-        trip
+        entry
     }
 }
 
@@ -42,14 +42,13 @@ export const getMyEntries = () => {
   }
 }
 
-export const createEntry = (entryData) => {
+export const createEntry = (entryData, history) => {
     return dispatch => {
         const sendableEntryData = {
             entry: {
-                todays_entry: entryData.todaysEntry,
-                tomorrows_goal: entryData.tomorrowsGoal,
-                food_log: entryData.foodLog,
-                created_at: entryData.createdAt,
+                todays_entry: entryData.formData.todaysEntry,
+                tomorrows_goal: entryData.formData.tomorrowsGoal,
+                food_log: entryData.formData.foodLog,
                 user_id: entryData.userId
             }
         }
@@ -58,7 +57,7 @@ export const createEntry = (entryData) => {
             method: "POST",
             headers: {
                 "Content-Type": 'application/json'
-                },
+                }, 
                 body: JSON.stringify(sendableEntryData)
             })
                 .then(r => r.json())
@@ -66,12 +65,13 @@ export const createEntry = (entryData) => {
                 if (resp.error) {
                     alert(resp.error)
                 } else {
-                    dispatch(createEntry(resp.data))
+                    dispatch(addEntry(resp.data))
                     dispatch(resetNewEntryForm())
+                    history.push('/')
                     // history.push(`/entries/${resp.data.id}`)
-                    // go somewhere else --> trip show?
+                    // go somewhere else --> show?
                     // add the new trip to the store
-                }
+                 }
                 })
                 .catch(console.log)
         

@@ -5,7 +5,7 @@ import {createEntry} from '../actions/myEntries.js'
 
 const NewEntryForm = ({formData, history, updateNewEntryForm, createEntry, userId}) => {
  
-    const {todaysEntry, tomorrowsGoal, foodLog, createdAt} = formData
+    const {todaysEntry, tomorrowsGoal, foodLog} = formData
 
     const handleChange = (event) => {
         const {name, value} = event.target
@@ -15,7 +15,7 @@ const NewEntryForm = ({formData, history, updateNewEntryForm, createEntry, userI
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        createEntry({formData, userId})
+        createEntry({formData, userId}, history)
     }
  return ( 
         <form onSubmit={handleSubmit}>
