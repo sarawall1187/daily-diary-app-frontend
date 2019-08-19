@@ -9,8 +9,9 @@ import Login from './components/Login.js'
 import Signup from './components/Signup.js'
 import MyEntries from './components/MyEntries.js'
 import EntryCard from './components/EntryCard.js'
-import EntryForm from './components/EntryForm.js'
-
+// import EntryForm from './components/EntryForm.js'
+import NewEntryFormContainer from './components/NewEntryFormContainer.js'
+import EditEntryFormContainer from './components/EditEntryFormContainer.js'
 import DiaryContainer from './components/DiaryContainer.js'
 
 
@@ -31,14 +32,14 @@ class App extends React.Component {
           <Route exact path='/login' component={Login}/> 
           <Route exact path='/signup' render={(props) => <Signup history={props.history}/>}/> 
           <Route exact path='/entries' component={MyEntries}/> 
-          <Route exact path='/entries/new' component={EntryForm}/> 
+          <Route exact path='/entries/new' component={NewEntryFormContainer}/> 
           <Route exact path='/entries/:id' render={props => {
             const entry = myEntries.find(entry => entry.id === props.match.params.id)
             return <EntryCard entry={entry} {...props}/> }
           }/>
           <Route exact path='/entries/:id/edit' render={props => {
             const entry = myEntries.find(entry => entry.id === props.match.params.id)
-            return <EntryForm entry={entry} {...props}/> }
+            return <EditEntryFormContainer entry={entry} {...props}/> }
           }/>
           <Route/>
        </Router>

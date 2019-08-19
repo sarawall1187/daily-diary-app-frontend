@@ -1,9 +1,9 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {updateNewEntryForm} from '../actions/entryForm.js'
-import {createEntry} from '../actions/myEntries.js'
 
-const EntryForm = ({formData, history, updateNewEntryForm, createEntry, userId}) => {
+
+const EntryForm = ({formData, history, updateNewEntryForm, userId, entry, handleSubmit}) => {
  
     const {todaysEntry, tomorrowsGoal, foodLog} = formData
 
@@ -13,12 +13,8 @@ const EntryForm = ({formData, history, updateNewEntryForm, createEntry, userId})
 
     }
 
-    const handleSubmit = (event) => {
-        event.preventDefault()
-        createEntry({formData, userId}, history)
-    }
  return ( 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={event => handleSubmit(event, formData, userId, history)}>
             <label htmlFor="todaysEntry">Anything interesting happen today?</label>
             <input type="textarea" name="todaysEntry" value={todaysEntry} onChange={handleChange}/><br/>
             <label htmlFor="tomorrowsGoal">What are your goals for tomorrow?</label>
@@ -37,4 +33,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, {updateNewEntryForm, createEntry})(EntryForm)
+export default connect(mapStateToProps, {updateNewEntryForm})(EntryForm)
