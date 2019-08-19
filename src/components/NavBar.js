@@ -8,7 +8,7 @@ import Logout from './Logout.js'
 
     return (
        <div className="NavBar">
-          <NavLink exact activeclass to="/entries">My Diary Entries |  </NavLink>
+          <NavLink exact activeclass to="/entries">My Diary Entries </NavLink>
           <NavLink exact activeclass to="/entries/new">Create a New Diary Entry   </NavLink>
           {!!currentUser ? <Logout/> : null}
        </div>

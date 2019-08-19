@@ -10,7 +10,7 @@ export default (state = initialState, action) => {
         return state.concat(action.entry)
 
         case "UPDATE_ENTRY":
-        return state
+        return state.map(entry => entry.id === action.entry.id ? action.entry : entry)
 
         case "CLEAR_TRIPS":
         return initialState

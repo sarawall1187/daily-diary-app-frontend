@@ -75,10 +75,7 @@ export const createEntry = (entryData, history) => {
                 } else {
                     dispatch(addEntry(resp.data))
                     dispatch(resetNewEntryForm())
-                    // history.push('/')
                     history.push(`/entries/${resp.data.id}`)
-                    // go somewhere else --> show?
-                    // add the new trip to the store
                  }
                 })
                 .catch(console.log)
@@ -110,11 +107,7 @@ export const updateEntry = (entryData, history) => {
                     alert(resp.error)
                 } else {
                     dispatch(updateEntrySuccess(resp.data))
-                    dispatch(resetNewEntryForm())
-                    // history.push('/')
                     history.push(`/entries/${resp.data.id}`)
-                    // go somewhere else --> show?
-                    // add the new trip to the store
                  }
                 })
                 .catch(console.log)

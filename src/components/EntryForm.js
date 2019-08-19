@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {updateNewEntryForm} from '../actions/entryForm.js'
 
 
-const EntryForm = ({formData, history, updateNewEntryForm, userId, entry, handleSubmit, editMode}) => {
+const EntryForm = ({formData, updateNewEntryForm, userId, entry, handleSubmit, editMode}) => {
  
     const {todaysEntry, tomorrowsGoal, foodLog} = formData
 
@@ -14,7 +14,7 @@ const EntryForm = ({formData, history, updateNewEntryForm, userId, entry, handle
     }
 
  return ( 
-        <form onSubmit={event => handleSubmit(event, formData, userId, history)}>
+        <form onSubmit={event => handleSubmit(event, formData, userId)}>
             <label htmlFor="todaysEntry">Anything interesting happen today?</label>
             <input type="textarea" name="todaysEntry" value={todaysEntry} onChange={handleChange}/><br/>
             <label htmlFor="tomorrowsGoal">What are your goals for tomorrow?</label>

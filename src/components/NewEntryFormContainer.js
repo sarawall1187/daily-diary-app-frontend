@@ -5,10 +5,12 @@ import EntryForm from './EntryForm.js'
 
 
 const NewEntryFormContainer = ({history, createEntry}) => {
-    const handleSubmit = (event, formData, userId, history) => {
+
+    const handleSubmit = (event, formData, userId) => {
         event.preventDefault()
         createEntry({formData, userId}, history)
     }
+    
     return <EntryForm history={history} handleSubmit={handleSubmit}/>
 }
 
