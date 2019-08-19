@@ -14,6 +14,8 @@ export default (state = initialState, action) => {
             }
         case "RESET_NEW_ENTRY_FORM":
             return initialState
+        case "DATA_FOR_EDIT_ENTRY_FORM":
+            return action.editEntryData
         default:
             return state;
     } 

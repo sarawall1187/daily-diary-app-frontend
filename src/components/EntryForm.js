@@ -1,9 +1,9 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {updateNewEntryForm} from '../actions/newEntryForm.js'
+import {updateNewEntryForm} from '../actions/entryForm.js'
 import {createEntry} from '../actions/myEntries.js'
 
-const NewEntryForm = ({formData, history, updateNewEntryForm, createEntry, userId}) => {
+const EntryForm = ({formData, history, updateNewEntryForm, createEntry, userId}) => {
  
     const {todaysEntry, tomorrowsGoal, foodLog} = formData
 
@@ -32,9 +32,9 @@ const NewEntryForm = ({formData, history, updateNewEntryForm, createEntry, userI
 const mapStateToProps = (state) => {
     const userId = state.currentUser ? state.currentUser.id : ""
     return {
-       formData: state.newEntryForm,
+       formData: state.entryForm,
         userId
     }
 }
 
-export default connect(mapStateToProps, {updateNewEntryForm, createEntry})(NewEntryForm)
+export default connect(mapStateToProps, {updateNewEntryForm, createEntry})(EntryForm)

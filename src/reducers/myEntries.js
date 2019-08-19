@@ -7,7 +7,6 @@ export default (state = initialState, action) => {
         return action.entries
 
         case "ADD_ENTRY":
-        console.log("inside myEntries reducer",state.entry)
         return state.concat(action.entry)
 
         case "CLEAR_TRIPS":

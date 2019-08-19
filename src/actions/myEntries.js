@@ -1,4 +1,4 @@
-import {resetNewEntryForm} from './newEntryForm.js'
+import {resetNewEntryForm} from './entryForm.js'
 //synchronous action creators
 export const setMyEntries = (entries) => {
     return {

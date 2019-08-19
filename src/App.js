@@ -9,7 +9,7 @@ import Login from './components/Login.js'
 import Signup from './components/Signup.js'
 import MyEntries from './components/MyEntries.js'
 import EntryCard from './components/EntryCard.js'
-import NewEntryForm from './components/NewEntryForm.js'
+import EntryForm from './components/EntryForm.js'
 
 import DiaryContainer from './components/DiaryContainer.js'
 
@@ -26,16 +26,19 @@ class App extends React.Component {
       <div>   
      
        <Router>
-       {loggedIn ? <NavBar/> : null}
+         {loggedIn ? <NavBar/> : null}
           <Route exact path='/' render={(props) => loggedIn ? <DiaryContainer {...props}/> : <Home {...props}/>}/>
           <Route exact path='/login' component={Login}/> 
           <Route exact path='/signup' render={(props) => <Signup history={props.history}/>}/> 
           <Route exact path='/entries' component={MyEntries}/> 
-          <Route exact path='/entries/new' component={NewEntryForm}/> 
+          <Route exact path='/entries/new' component={EntryForm}/> 
           <Route exact path='/entries/:id' render={props => {
-
             const entry = myEntries.find(entry => entry.id === props.match.params.id)
             return <EntryCard entry={entry} {...props}/> }
+          }/>
+          <Route exact path='/entries/:id/edit' render={props => {
+            const entry = myEntries.find(entry => entry.id === props.match.params.id)
+            return <EntryForm entry={entry} {...props}/> }
           }/>
           <Route/>
        </Router>
