@@ -22,6 +22,14 @@ export const addEntry = (entry) => {
     }
 }
 
+export const updateEntrySuccess = (entry) => {
+    
+    return {
+        type: "UPDATE_ENTRY",
+        entry
+    }
+}
+
 //asynchronous action creators
 export const getMyEntries = () => {
     return dispatch => {
@@ -76,4 +84,41 @@ export const createEntry = (entryData, history) => {
                 .catch(console.log)
         
     }
+}
+
+export const updateEntry = (entryData, history) => {
+    return dispatch => {
+        const sendableEntryData = {
+            entry: {
+                todays_entry: entryData.formData.todaysEntry,
+                tomorrows_goal: entryData.formData.tomorrowsGoal,
+                food_log: entryData.formData.foodLog,
+                user_id: entryData.userId
+            }
+        }
+        return fetch(`http://localhost:3000/api/v1/entries/${entryData.entryId}`, {
+            credentials: "include",
+            method: "PATCH",
+            headers: {
+                "Content-Type": 'application/json'
+                }, 
+                body: JSON.stringify(sendableEntryData)
+            })
+                .then(r => r.json())
+                .then(resp => {
+                if (resp.error) {
+                    alert(resp.error)
+                } else {
+                    dispatch(updateEntrySuccess(resp.data))
+                    dispatch(resetNewEntryForm())
+                    // history.push('/')
+                    history.push(`/entries/${resp.data.id}`)
+                    // go somewhere else --> show?
+                    // add the new trip to the store
+                 }
+                })
+                .catch(console.log)
+        
+    }
+
 }

@@ -9,6 +9,9 @@ export default (state = initialState, action) => {
         case "ADD_ENTRY":
         return state.concat(action.entry)
 
+        case "UPDATE_ENTRY":
+        return state
+
         case "CLEAR_TRIPS":
         return initialState
 

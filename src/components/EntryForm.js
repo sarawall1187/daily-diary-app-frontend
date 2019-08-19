@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {updateNewEntryForm} from '../actions/entryForm.js'
 
 
-const EntryForm = ({formData, history, updateNewEntryForm, userId, entry, handleSubmit}) => {
+const EntryForm = ({formData, history, updateNewEntryForm, userId, entry, handleSubmit, editMode}) => {
  
     const {todaysEntry, tomorrowsGoal, foodLog} = formData
 
@@ -21,7 +21,7 @@ const EntryForm = ({formData, history, updateNewEntryForm, userId, entry, handle
             <input type="textarea" name="tomorrowsGoal" value={tomorrowsGoal} onChange={handleChange}/><br/>
             <label htmlFor="foodLog">Log what you ate today. It will help you stay on track:</label>
             <input type="textarea" name="foodLog" value={foodLog} onChange={handleChange}/><br/>
-            <input type="submit"/>
+            <input type="submit" value={editMode ? "Edit Diary Entry" : "Create Diary Entry"} />
         </form>
      )};
 
