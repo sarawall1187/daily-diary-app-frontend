@@ -67,8 +67,8 @@ export const createEntry = (entryData, history) => {
                 } else {
                     dispatch(addEntry(resp.data))
                     dispatch(resetNewEntryForm())
-                    history.push('/')
-                    // history.push(`/entries/${resp.data.id}`)
+                    // history.push('/')
+                    history.push(`/entries/${resp.data.id}`)
                     // go somewhere else --> show?
                     // add the new trip to the store
                  }

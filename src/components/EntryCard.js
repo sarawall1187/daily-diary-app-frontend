@@ -3,14 +3,17 @@ import React from 'react'
 
 const EntryCard = ({entry}) => {
     return(
+        entry ? 
         <div>
-            <h3>Entry for: {entry.attributes.created_at}</h3>
+            <h3>Diary Entry for: {entry.attributes.created_at}</h3>
           <ul>
-            <li> {entry.attributes.todays_entry}</li>
-            <li> {entry.attributes.tomorrows_goal}</li>
-            <li> {entry.attributes.food_log}</li>
+            
+            <li><strong>Today's events:</strong> {entry.attributes.todays_entry}</li>
+            <li><strong>Tomorrow's goals:</strong> {entry.attributes.tomorrows_goal}</li>
+            <li><strong>Food Log:</strong> {entry.attributes.food_log}</li>
           </ul>
-        </div>
+        </div> 
+        : null
     )
 }
 

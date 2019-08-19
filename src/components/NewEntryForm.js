@@ -19,8 +19,11 @@ const NewEntryForm = ({formData, history, updateNewEntryForm, createEntry, userI
     }
  return ( 
         <form onSubmit={handleSubmit}>
+            <label htmlFor="todaysEntry">Anything interesting happen today?</label>
             <input type="textarea" name="todaysEntry" value={todaysEntry} onChange={handleChange}/><br/>
+            <label htmlFor="tomorrowsGoal">What are your goals for tomorrow?</label>
             <input type="textarea" name="tomorrowsGoal" value={tomorrowsGoal} onChange={handleChange}/><br/>
+            <label htmlFor="foodLog">Log what you ate today. It will help you stay on track:</label>
             <input type="textarea" name="foodLog" value={foodLog} onChange={handleChange}/><br/>
             <input type="submit"/>
         </form>

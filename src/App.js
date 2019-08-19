@@ -2,12 +2,13 @@ import React from 'react';
 import './App.css';
 import {connect} from 'react-redux'
 import {getCurrentUser} from './actions/currentUser.js'
-import {BrowserRouter as Router, Route, Switch, withRouter} from 'react-router-dom'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 import NavBar from './components/NavBar.js'
 import Home from './components/Home.js'
 import Login from './components/Login.js'
 import Signup from './components/Signup.js'
 import MyEntries from './components/MyEntries.js'
+import EntryCard from './components/EntryCard.js'
 import NewEntryForm from './components/NewEntryForm.js'
 
 import DiaryContainer from './components/DiaryContainer.js'
@@ -20,7 +21,7 @@ class App extends React.Component {
   }
 
   render() {
-    const {loggedIn} = this.props
+    const {loggedIn, myEntries} = this.props
     return (
       <div>   
      
@@ -31,6 +32,11 @@ class App extends React.Component {
           <Route exact path='/signup' render={(props) => <Signup history={props.history}/>}/> 
           <Route exact path='/entries' component={MyEntries}/> 
           <Route exact path='/entries/new' component={NewEntryForm}/> 
+          <Route exact path='/entries/:id' render={props => {
+
+            const entry = myEntries.find(entry => entry.id === props.match.params.id)
+            return <EntryCard entry={entry} {...props}/> }
+          }/>
           <Route/>
        </Router>
        
@@ -41,7 +47,8 @@ class App extends React.Component {
 }
 const mapStateToProps = (state) => {
   return {
-      loggedIn: !!state.currentUser
+      loggedIn: !!state.currentUser,
+      myEntries: state.myEntries
      
   }
 }
