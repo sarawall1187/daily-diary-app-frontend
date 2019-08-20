@@ -13,6 +13,7 @@ import EntryCard from './components/EntryCard.js'
 import NewEntryFormContainer from './components/NewEntryFormContainer.js'
 import EditEntryFormContainer from './components/EditEntryFormContainer.js'
 import DiaryContainer from './components/DiaryContainer.js'
+// import img from 'https://www.pexels.com/photo/beverage-caffeine-coffee-cup-612252/'
 
 
 class App extends React.Component {

@@ -2,7 +2,8 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {updateSignupForm} from '../actions/signupForm.js'
 import {signup} from '../actions/currentUser.js'
-
+import Form from 'react-bootstrap/Form';
+import Container from 'react-bootstrap/Container';
  const Signup = ({signupFormData, updateSignupForm, signup, history}) => {
 
     const handleChange = event => {
@@ -20,24 +21,33 @@ import {signup} from '../actions/currentUser.js'
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            Enter Username:
+        <Container className="loginForm">
+        <h1>Signup Here:</h1>
+        <Form onSubmit={handleSubmit}>
+        <Form.Group controlId="formBasicUsername">
+        <Form.Label>Enter Username:</Form.Label>
             <input type="text" 
                     value={signupFormData.username} 
                     name="username" 
                     onChange={handleChange}/> <br/>
-            Enter Email:
+            </Form.Group>
+            <Form.Group controlId="formBasicEmail">
+            <Form.Label>Enter Email:</Form.Label>
             <input type="text" 
                     value={signupFormData.email} 
                     name="email" 
                     onChange={handleChange}/> <br/>
-            Enter Password:
+          </Form.Group>
+            <Form.Group controlId="formBasicPassword">
+            <Form.Label>Enter Password:</Form.Label>
             <input type="password" 
                     value={signupFormData.password} 
                     name="password" 
                     onChange={handleChange}/> <br/>
-            <input type="submit" value="Signup"/>
-        </form>
+             </Form.Group>
+             <Form.Control className="loginButton"type="submit" value="Signup"/>
+         </Form>
+        </Container>
     )
 }
 

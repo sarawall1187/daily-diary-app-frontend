@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {updateEntry, deleteEntry} from '../actions/myEntries.js'
 import {dataForEditEntryForm, resetNewEntryForm} from '../actions/entryForm.js'
 import EntryForm from './EntryForm.js'
+import Button from 'react-bootstrap/Button';
 
 
 class EditEntryFormContainer extends React.Component {

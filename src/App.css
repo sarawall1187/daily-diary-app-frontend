@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  
 }
 
 .App-logo {
@@ -32,12 +33,53 @@
   }
 }
 
+
 .NavBar {
   display: flex;
-  flex-direction: row;
+  flex-direction: right;
   justify-content: space-evenly;
 }
 
 a.active {
   color: teal
+}
+
+
+
+.loginForm {
+  background-color: lightpink;
+  opacity: 0.8;
+  margin-top: 10%;
+  padding: 5%;
+  width: 30%;
+}
+
+.loginButton {
+  background-color: #81F7F3;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.home {
+   height: 100%;
+   padding-top: 30%;
+   margin-left: 40%;
+   justify-content: center;
+  align-items: center;
+}
+
+.link {
+  color: #DF013A;
+  text-decoration: none;
+  
+}
+
+h1 {
+  font-size: 3em;
+  font-family: URW Chancery L, cursive; 
+}
+
+a:hover {
+  color: #FA5882;
+  text-decoration: none;
 }
