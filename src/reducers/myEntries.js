@@ -12,6 +12,10 @@ export default (state = initialState, action) => {
         case "UPDATE_ENTRY":
         return state.map(entry => entry.id === action.entry.id ? action.entry : entry)
 
+        case "DELETE_ENTRY_SUCCESS":
+        return state.filter(entry => entry.id === action.entryId ? false : true)
+
+
         case "CLEAR_TRIPS":
         return initialState
 

@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {updateNewEntryForm} from '../actions/entryForm.js'
 
 
-const EntryForm = ({formData, updateNewEntryForm, userId, entry, handleSubmit, editMode}) => {
+const EntryForm = ({formData, history, updateNewEntryForm, userId, entry, handleSubmit, editMode}) => {
  
     const {todaysEntry, tomorrowsGoal, foodLog} = formData
 

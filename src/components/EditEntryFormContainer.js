@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {updateEntry} from '../actions/myEntries.js'
+import {updateEntry, deleteEntry} from '../actions/myEntries.js'
 import {dataForEditEntryForm, resetNewEntryForm} from '../actions/entryForm.js'
 import EntryForm from './EntryForm.js'
 
@@ -29,13 +29,16 @@ class EditEntryFormContainer extends React.Component {
     }
 
     render() {
-    const {history, handleSubmit} = this.props
+    const {history, deleteEntry, entry} = this.props
+    const entryId = entry ? entry.id : null
         return (
         <div>
           <EntryForm editMode handleSubmit={this.handleSubmit}/>
+          <br/>
+          <button style= {{color: "red"}}onClick={()=>deleteEntry(entryId, history)}>Delete this Diary Entry</button>
         </div>
         )
     }
 }
 
-export default connect(null, {updateEntry, dataForEditEntryForm, resetNewEntryForm})(EditEntryFormContainer)
+export default connect(null, {updateEntry, dataForEditEntryForm, resetNewEntryForm, deleteEntry})(EditEntryFormContainer)

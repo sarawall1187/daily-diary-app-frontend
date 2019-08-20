@@ -22,6 +22,14 @@ export const addEntry = (entry) => {
     }
 }
 
+export const deleteEntrySuccess = (entryId) => {
+    
+    return {
+        type: "DELETE_ENTRY_SUCCESS",
+        entryId
+    }
+}
+
 export const updateEntrySuccess = (entry) => {
     
     return {
@@ -113,5 +121,30 @@ export const updateEntry = (entryData, history) => {
                 .catch(console.log)
         
     }
+
+}
+
+export const deleteEntry = (entryId, history) => {
+    return dispatch => {
+        return fetch(`http://localhost:3000/api/v1/entries/${entryId}`, {
+            credentials: "include",
+            method: "DELETE",
+            headers: {
+                "Content-Type": 'application/json'
+                }   
+            })
+            .then(r => r.json())
+            .then(resp => {
+            if (resp.error) {
+                alert(resp.error)
+            } else {
+                dispatch(deleteEntrySuccess(entryId))
+                history.push(`/entries`)
+                }
+            })
+            .catch(console.log)
+        
+    }
+
 
 }
