@@ -30,16 +30,16 @@ class EditEntryFormContainer extends React.Component {
     }
 
     render() {
-    // const { entry} = this.props
+    const { history, entry} = this.props
     // const entryId = entry ? entry.id : null
         return (
            
          <div> 
-          <EntryForm editMode handleSubmit={this.handleSubmit}/>
+          <EntryForm history={history} entry={entry} editMode handleSubmit={this.handleSubmit}/>
          </div> 
       
         )
     }
 }
 
-export default connect(null, {updateEntry, dataForEditEntryForm, resetNewEntryForm})(EditEntryFormContainer)
+export default connect(null, { updateEntry, dataForEditEntryForm, resetNewEntryForm})(EditEntryFormContainer)

@@ -126,6 +126,7 @@ export const updateEntry = (entryData, history) => {
 
 export const deleteEntry = (entryId, history) => {
     return dispatch => {
+        // console.log(entryId)
         return fetch(`http://localhost:3000/api/v1/entries/${entryId}`, {
             credentials: "include",
             method: "DELETE",
@@ -139,7 +140,8 @@ export const deleteEntry = (entryId, history) => {
                 alert(resp.error)
             } else {
                 dispatch(deleteEntrySuccess(entryId))
-                history.push(`/entries`)
+                history.push(`/entries`) 
+                // history.push(`/`)
                 }
             })
             .catch(console.log)
