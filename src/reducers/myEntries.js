@@ -15,7 +15,6 @@ export default (state = initialState, action) => {
         case "DELETE_ENTRY_SUCCESS":
         return state.filter(entry => entry.id === action.entryId ? false : true)
 
-
         case "CLEAR_TRIPS":
         return initialState
 

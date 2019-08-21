@@ -37,12 +37,15 @@ const EntryForm = ({formData, history, updateNewEntryForm, userId, entry, handle
         </Form.Group>
         
         <Form.Control style={{color: "rgb(1, 223, 215)"}} type="submit" value={editMode ? "Edit Diary Entry" : "Create Diary Entry"} /> <br/>
-        <Form.Control value={editMode ? <button style= {{color: "teal"}} onClick={()=>deleteEntry(entryId, history)}>Delete this Diary Entry</button> : null} />
+        {/* {editMode ?  <Form.Control type="submit" style={{color: "rgb(1, 223, 215)"}} onClick={()=>deleteEntry(entryId, history, userId)} value="Delete this Diary Entry" /> : null}  */}
+         {editMode ?  <button style={{color: "rgb(1, 223, 215)"}} onClick={()=>deleteEntry(entryId, history, userId)}>Delete this Diary Entry</button> : ""}  
       </Form>
     </Container> 
      )};
 
 const mapStateToProps = (state) => {
+    // const { entry} = this.props
+    // const entryId = entry ? entry.id : null
     const userId = state.currentUser ? state.currentUser.id : ""
     return {
        formData: state.entryForm,

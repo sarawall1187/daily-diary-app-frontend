@@ -1,10 +1,9 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {updateEntry, deleteEntry} from '../actions/myEntries.js'
+import {updateEntry} from '../actions/myEntries.js'
 import {dataForEditEntryForm, resetNewEntryForm} from '../actions/entryForm.js'
 import EntryForm from './EntryForm.js'
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
+
 
 
 class EditEntryFormContainer extends React.Component {
@@ -31,8 +30,8 @@ class EditEntryFormContainer extends React.Component {
     }
 
     render() {
-    const {history, deleteEntry, entry} = this.props
-    const entryId = entry ? entry.id : null
+    // const { entry} = this.props
+    // const entryId = entry ? entry.id : null
         return (
            
          <div> 
@@ -43,4 +42,4 @@ class EditEntryFormContainer extends React.Component {
     }
 }
 
-export default connect(null, {updateEntry, dataForEditEntryForm, resetNewEntryForm, deleteEntry})(EditEntryFormContainer)
+export default connect(null, {updateEntry, dataForEditEntryForm, resetNewEntryForm})(EditEntryFormContainer)

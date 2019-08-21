@@ -139,7 +139,7 @@ a:hover {
 .quoteContainer {
   padding: 1%;
   margin-left: 1%;
-  background-color: rgb(242, 242, 242, 0.5);
+  background-color: rgba(242, 242, 242, 0.308);
   border-radius: 10px;
   width: 35%;
 
