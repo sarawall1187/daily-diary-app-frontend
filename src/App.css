@@ -35,31 +35,69 @@
 
 
 .NavBar {
-  /* display: flex;
-  flex-direction: right;
-  justify-content: space-evenly; */
-  margin: 1%;
-  padding: 2%;
+  background-color: rgb(159, 1, 2, 0.5);
+  margin-left: 1%;
+  padding: 1%; 
+  border-radius: 10px;
+  width: 35%;
+}
+
+.navlink {
+  font-size: 1.25em;
+  padding-right: 3%;
+  
 }
 
 a.active {
-  color: teal
+  color: #2EFEF7;
+} 
+
+.entryContainer {
+  margin-left: 35%;
+  margin-top: 1%;
+  padding: .5%;
+  background-color: rgb(242, 242, 242, 0.5);
+  border-radius: 10px;
+  width: 45%;
+  text-align: center;
 }
 
+.entryContainer a {
+  color: rgb(1, 223, 215, 0.8);
+  
+}
 
+.entryCard {
+  margin-left: 35%;
+  margin-top: 10%;
+  padding: 1%;
+  background-color: rgb(242, 242, 242, 0.5);
+  border-radius: 10px;
+  width: 40%;
+}
+
+.entryCard ul li {
+  list-style-type: none;
+}
 
 .loginForm {
-  background-color: lightpink;
-  opacity: 0.8;
-  margin-top: 10%;
-  padding: 5%;
+  background-color: rgb(245, 194, 199, 0.7);
+  margin-top: 2%;
+  padding: 3%;
   width: 30%;
+  border-radius: 10px;
 }
 
 .loginButton {
-  background-color: #81F7F3;
+  background-color: rgb(1, 223, 215, 0.8);
   width: 50%;
   margin: 0 auto;
+  border-radius: 10px;
+}
+
+.logout {
+  color: rgb(1, 223, 215);
+  border-radius: 5px;
 }
 
 .home {
@@ -67,7 +105,7 @@ a.active {
    padding-top: 30%;
    margin-left: 40%;
    justify-content: center;
-  align-items: center;
+   align-items: center;
 }
 
 .link {
@@ -76,13 +114,41 @@ a.active {
   
 }
 
-h1 {
+h1, h4 {
   font-size: 3em;
   font-family: URW Chancery L, cursive; 
   font-weight: bold;
 }
 
+h3 {
+  /* font-size: 2em; */
+  font-family: URW Chancery L, cursive; 
+  font-weight: bold;
+}
+
+.submitButton a {
+  color: rgb(1, 223, 215);
+}
+
+
 a:hover {
-  color: #FA5882;
-  text-decoration: none;
+  color:  rgb(245, 194, 199);
+
+}
+
+.quoteContainer {
+  padding: 1%;
+  margin-left: 1%;
+  background-color: rgb(242, 242, 242, 0.5);
+  border-radius: 10px;
+  width: 35%;
+
+}
+
+.quoteContainer h4 {
+  font-size: 1.5em;
+}
+
+.quoteContainer p {
+  font-size: .75em;
 }

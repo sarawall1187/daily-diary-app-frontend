@@ -10,7 +10,11 @@ const MyEntries = (props) => {
        <h3>Diary Entry for: {entry.attributes.created_at}</h3>
     </Link>)
 
-    return EntryCards
+    return (
+        <div className="entryContainer active">
+        {EntryCards}
+        </div>
+    )
 }
 
 const mapStateToProps = ({myEntries}) => {

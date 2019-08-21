@@ -4,6 +4,7 @@ import {updateEntry, deleteEntry} from '../actions/myEntries.js'
 import {dataForEditEntryForm, resetNewEntryForm} from '../actions/entryForm.js'
 import EntryForm from './EntryForm.js'
 import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
 
 
 class EditEntryFormContainer extends React.Component {
@@ -33,11 +34,11 @@ class EditEntryFormContainer extends React.Component {
     const {history, deleteEntry, entry} = this.props
     const entryId = entry ? entry.id : null
         return (
-        <div>
+           
+         <div> 
           <EntryForm editMode handleSubmit={this.handleSubmit}/>
-          <br/>
-          <button style= {{color: "red"}}onClick={()=>deleteEntry(entryId, history)}>Delete this Diary Entry</button>
-        </div>
+         </div> 
+      
         )
     }
 }

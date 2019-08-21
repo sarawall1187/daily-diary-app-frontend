@@ -9,11 +9,11 @@ import Login from './components/Login.js'
 import Signup from './components/Signup.js'
 import MyEntries from './components/MyEntries.js'
 import EntryCard from './components/EntryCard.js'
-// import EntryForm from './components/EntryForm.js'
+import Quote from './components/Quote.js'
 import NewEntryFormContainer from './components/NewEntryFormContainer.js'
 import EditEntryFormContainer from './components/EditEntryFormContainer.js'
 import DiaryContainer from './components/DiaryContainer.js'
-// import img from 'https://www.pexels.com/photo/beverage-caffeine-coffee-cup-612252/'
+
 
 
 class App extends React.Component {
@@ -29,6 +29,7 @@ class App extends React.Component {
      
        <Router>
          {loggedIn ? <NavBar/> : null}
+         {loggedIn ? <Quote/> : null}
           <Route exact path='/' render={(props) => loggedIn ? <DiaryContainer {...props}/> : <Home {...props}/>}/>
           <Route exact path='/login' component={Login}/> 
           <Route exact path='/signup' render={(props) => <Signup history={props.history}/>}/> 

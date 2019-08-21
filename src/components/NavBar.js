@@ -10,8 +10,9 @@ import Container from 'react-bootstrap/Container';
     return (
     
        <div className="NavBar">
-          <NavLink exact className="active" to="/entries">My Diary Entries </NavLink>
-          <NavLink exact className="active" to="/entries/new">Create a New Diary Entry</NavLink>
+       <h3 className="navlink">Welcome {currentUser.attributes.username}</h3>
+          <NavLink exact className="active navlink" to="/entries">My Diary Entries </NavLink>
+          <NavLink exact className="active navlink" to="/entries/new">Create a New Diary Entry</NavLink>
           {!!currentUser ? <Logout/> : null}
        </div>
   

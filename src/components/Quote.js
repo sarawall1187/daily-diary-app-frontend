@@ -30,28 +30,15 @@ componentDidMount() {
         if (error) {
           return <div>Error: {error.message}</div>;
         } else if (!isLoaded) {
-        // GETTING HERE IN THIS ELSE IF STATEMENT
-          return <div>Loading...</div>;
+          return <div>Loading your inspirational quote of the day...</div>;
         } else {
-
-          return <div> 
-          {quotes.quote} <p>by</p> {quotes.author}
-</div>
-        //    { quotes.author},
-        // {   }
-            {/* <li key={quote.quote.author}> */}
-          
-        //   quotes.map(quote => (
-        //       <ul>
-        //     <li key={quote.quote.author}>
-        //       {quote.quote.quote} 
-        //     </li>
-        //     </ul>
-          
-     
-   
-   }
- }
+          return (
+             <div className="quoteContainer"> 
+              <h4>Inspirational Quote of the Day:</h4>
+                <p>{quotes.quote} <strong>- {quotes.author}</strong></p>
+              </div>
+         )}
+    }
 }
 
 export default Quote

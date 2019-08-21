@@ -40,7 +40,7 @@ import Container from 'react-bootstrap/Container';
                     onChange={handleChange}/> <br/>
             <Form.Control className="loginButton"type="submit" value="Login"/>
            </Form.Group>
-        </Form>
+         </Form>
         </Container>
     )
 }

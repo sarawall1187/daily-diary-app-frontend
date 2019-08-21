@@ -13,7 +13,7 @@ import {withRouter} from 'react-router-dom'
 
     return (
         <form onSubmit={handleSubmit}>
-            <input type="submit" value="Logout"/>
+            <input className="logout" type="submit" value="Logout"/>
         </form>
     )
 }
