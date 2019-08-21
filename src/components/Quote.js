@@ -13,23 +13,15 @@ class Quote extends React.Component {
     }
 
 componentDidMount() {
-    return fetch('http://quotes.rest/qod.json', {
-      })
+    return fetch('http://quotes.rest/qod.json')
     .then(res => res.json())
-    .then(quote => 
-        // console.log(quote))
-        {
-        this.setState({
+    // .then(quote => console.log(quote.contents.quotes[0].quote))
+     .then(quote => {
+         this.setState({
             isLoaded: true,
             quotes: quote.contents.quotes[0]
           });
-    }),
-    (error) => {
-        this.setState({
-          isLoaded: true,
-          error
-        });
-      }
+     })
 }
 
 
@@ -41,16 +33,25 @@ componentDidMount() {
         // GETTING HERE IN THIS ELSE IF STATEMENT
           return <div>Loading...</div>;
         } else {
-          return  <ul>
-          {quotes.map(quote => (
-            <li key={quote.contents.quotes.author}>
-              {quote.contents.quotes.quote} 
-            </li>
-          ))}
-        </ul>
-    }
+
+          return <div> 
+          {quotes.quote} <p>by</p> {quotes.author}
+</div>
+        //    { quotes.author},
+        // {   }
+            {/* <li key={quote.quote.author}> */}
+          
+        //   quotes.map(quote => (
+        //       <ul>
+        //     <li key={quote.quote.author}>
+        //       {quote.quote.quote} 
+        //     </li>
+        //     </ul>
+          
+     
    
    }
+ }
 }
 
 export default Quote

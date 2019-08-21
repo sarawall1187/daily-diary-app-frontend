@@ -35,9 +35,11 @@
 
 
 .NavBar {
-  display: flex;
+  /* display: flex;
   flex-direction: right;
-  justify-content: space-evenly;
+  justify-content: space-evenly; */
+  margin: 1%;
+  padding: 2%;
 }
 
 a.active {
@@ -77,6 +79,7 @@ a.active {
 h1 {
   font-size: 3em;
   font-family: URW Chancery L, cursive; 
+  font-weight: bold;
 }
 
 a:hover {
