@@ -7,7 +7,8 @@ import Container from 'react-bootstrap/Container';
     return (
         <div>
           <Container className="home">
-            <h1>Welcome to your Daily Diary</h1> 
+            <h1>Welcome to your Daily Diary</h1>
+            <p>Secure, Private, and Exclusive to You.</p> 
             <br/>
             <h2><Link to="/signup" className="link">Sign Up</Link> or <Link to="/login" className="link">Log In</Link></h2>
            </Container>

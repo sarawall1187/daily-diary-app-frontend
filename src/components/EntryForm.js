@@ -8,8 +8,6 @@ import Container from 'react-bootstrap/Container';
 const EntryForm = ({formData, history, updateNewEntryForm, userId, entry, handleSubmit, editMode, deleteEntry}) => {
  
     const {todaysEntry, tomorrowsGoal, foodLog} = formData
-    // const {deleteEntry} = this.props
-    console.log(entry)
     const entryId = entry ? entry.id : null
 
     const handleChange = (event) => {
@@ -39,7 +37,8 @@ const EntryForm = ({formData, history, updateNewEntryForm, userId, entry, handle
         
         <Form.Control style={{color: "rgb(1, 223, 215)"}} type="submit" value={editMode ? "Edit Diary Entry" : "Create Diary Entry"} /> <br/>
         {/* {editMode ?  <Form.Control type="submit" style={{color: "rgb(1, 223, 215)"}} onClick={()=>deleteEntry(entryId, history, userId)} value="Delete this Diary Entry" /> : null}  */}
-         {editMode ?  <button style={{color: "rgb(1, 223, 215)"}} onClick={()=>deleteEntry(entryId, history)}>Delete this Diary Entry</button> : null}  
+         {/* {editMode ?  <button style={{color: "rgb(1, 223, 215)"}} onClick={()=>deleteEntry(entryId, history)}>Delete this Diary Entry</button> : null}   */}
+         {editMode ? <div className="deleteButton" onClick={()=>deleteEntry(entryId, history)}>Delete this Diary Entry</div> : null}
       </Form>
     </Container> 
      )};

@@ -10,7 +10,7 @@ const DiaryContainer = ({currentUser}) => {
         return (
           <Container>
               {/* <Quote/> */}
-              <MyEntries/>
+             {currentUser ? <MyEntries/> : ''} 
            </Container>
        )
   

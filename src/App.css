@@ -40,6 +40,9 @@
   padding: 1%; 
   border-radius: 10px;
   width: 35%;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
 }
 
 .navlink {
@@ -60,6 +63,9 @@ a.active {
   border-radius: 10px;
   width: 45%;
   text-align: center;
+  /* border-style: solid;
+  border-color: black;
+  border-width: 1px; */
 }
 
 .entryContainer a {
@@ -74,6 +80,9 @@ a.active {
   background-color: rgb(242, 242, 242, 0.5);
   border-radius: 10px;
   width: 40%;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
 }
 
 .entryCard ul li {
@@ -86,6 +95,9 @@ a.active {
   padding: 3%;
   width: 30%;
   border-radius: 10px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
 }
 
 .loginButton {
@@ -139,10 +151,13 @@ a:hover {
 .quoteContainer {
   padding: 1%;
   margin-left: 1%;
+  margin-top: 1%;
   background-color: rgba(242, 242, 242, 0.308);
   border-radius: 10px;
   width: 35%;
-
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
 }
 
 .quoteContainer h4 {
@@ -151,4 +166,12 @@ a:hover {
 
 .quoteContainer p {
   font-size: .75em;
+}
+
+.deleteButton {
+  background-color: white;
+  border-radius: 2px;
+  padding: 1.5%;
+  color: rgb(1, 223, 215);
+  text-align: center;
 }
