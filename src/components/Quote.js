@@ -15,7 +15,6 @@ class Quote extends React.Component {
 componentDidMount() {
     return fetch('http://quotes.rest/qod.json')
     .then(res => res.json())
-    // .then(quote => console.log(quote.contents.quotes[0].quote))
      .then(quote => {
          this.setState({
             isLoaded: true,
@@ -35,7 +34,7 @@ componentDidMount() {
           return (
              <div className="quoteContainer"> 
               <h4>Inspirational Quote of the Day:</h4>
-                <p>{quotes.quote} <strong>- {quotes.author}</strong></p>
+                <p>{quotes.quote} <br/> <strong>-{quotes.author}</strong></p>
               </div>
          )}
     }

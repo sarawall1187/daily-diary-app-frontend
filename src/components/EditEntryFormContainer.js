@@ -31,7 +31,6 @@ class EditEntryFormContainer extends React.Component {
 
     render() {
     const { history, entry} = this.props
-    // const entryId = entry ? entry.id : null
         return (
            
          <div> 
