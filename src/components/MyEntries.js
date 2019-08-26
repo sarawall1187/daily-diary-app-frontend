@@ -4,42 +4,42 @@ import {Link} from 'react-router-dom'
 
 class MyEntries extends React.Component {
 
+    constructor(){
+        super()
+        this.state = {
+            votes: {}
+        }
+    }
+
+
     componentDidMount() {
-        let votes = {};
-        if (this.props.myEntries.length > 0) {
+     let votes = {}
         this.props.myEntries.map((entry) => {
             votes[entry.id] = 0
         })
         this.setState({
             votes: votes
         })
-        }
-  }
+    }
 
   componentDidUpdate(prevProps) {
-    let votes = {};
-    if (prevProps !== this.props) {
-       this.props.myEntries.map((entry) => {
-            votes[entry.id] = 0
-        })
-      this.setState({
-        votes: votes
-      })
-    }
-  }
-
-    constructor(){
-        super()
-        this.state = {
-            votes: {}
+    let votes = {}
+        if (prevProps !== this.props) {
+        this.props.myEntries.map((entry) => {
+                votes[entry.id] = 0
+            })
+            this.setState({
+                votes: votes
+            })
         }
-}
+   }
 
+ 
    upVoted = (id) => {
     this.setState({
         votes: {
           ...this.state.votes,
-          [id]: this.state.votes[id] += 1
+          [id]: this.state.votes[id] + 1
         }
       })
     }
