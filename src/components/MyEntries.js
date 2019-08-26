@@ -3,18 +3,37 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
 
-const MyEntries = (props) => {
+class MyEntries extends React.Component {
+
+    constructor(props){
+    super(props)
+    this.state = {
+        upVote: 0
+    }
+}
+
+   upVoted() {
+    this.setState({
+        upVote: this.state.upVote + 1
+    })
+}
     
-    const EntryCards = props.myEntries.map(entry => 
+    EntryCards = this.props.myEntries.map(entry => 
+    <>
     <Link to={`entries/${entry.id}`} key={entry.id}>
        <h3>Diary Entry for: {entry.attributes.created_at}</h3>
-    </Link>)
-
+      
+    </Link>
+    <button onClick={this.upVoted}>+</button>
+    </>
+)
+ render() {
     return (
         <div className="entryContainer active">
-        {EntryCards}
+        {this.props.EntryCards}
         </div>
     )
+}
 }
 
 const mapStateToProps = ({myEntries}) => {
