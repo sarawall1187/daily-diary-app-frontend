@@ -9,15 +9,17 @@ const DiaryContainer = ({currentUser}) => {
    
         return (
           <Container>
-              {/* <Quote/> */}
-             {currentUser ? <MyEntries/> : ''} 
+             {currentUser ? <MyEntries /> : ''} 
+          
            </Container>
        )
   
 }
 const mapStateToProps = ({currentUser}) => {
+  // console.log("inside mapStateToProps", currentUser)
     return ({
       currentUser
+     
     })
   }
   
